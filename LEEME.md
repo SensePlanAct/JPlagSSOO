@@ -10,92 +10,8 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jplag/JPlag)](https://github.com/jplag/JPlag/pulse)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=jplag_JPlag&metric=coverage)](https://sonarcloud.io/component_measures?metric=Coverage&view=list&id=jplag_JPlag)
 [![Java Version](https://img.shields.io/badge/java-SE%2025-yellowgreen)](#download-and-installation)
-'''
-#!/bin/bash
-# 1 EXTRAE DE LA CARPETA DE EJECUCION .ZIP QUE DESCOMPRIMIR EN LA CARPETA PARÁMETRO
-#       PARÁMETRO $1 el nombre del directorio donde extrae los .zip
 
-# 1.-- Descomprima el contenido de ZIP del directorio de ejecución
-#for file in $(ls *.zip)
-#for file in $(find . -iname "*.zip")
-for file in *.zip
-do
-if [ -d "$file" ]
- then
-        echo directorio: "$file"
- else
-        if [ -f "$file" ]
-         then
-                echo archivo: "$file"
-
-                # DESCOMPRIME A CARPETA V4
-                dir=$(echo "$file" | awk -F/ '{ print $2"" }' | tr ' (),:-' '_' )"$1"
-                fichero=$( echo "$file" | sed 's/ /\\ /g' )
-                echo archivo zip: "$fichero" y directorio: $dir
-
-                # Si existen ficheros de extensión .zip
-                if [ "$file" != "*.zip" ] ; then
-                        #$(gzip $file ; tar -xvzf $file ; rm $file )
-                        salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
-                fi
-       fi
- fi
-done
-
-
-# 2 REVISA EL CONTEIDO DE LAS CARPETAS BUSCANDO .ZIP QUE DESCOMPRIMIR
-
-# 2.1.- descomprima 1er nivel del contenido de los ZIP de TODOS los directorios creados
-for file in ./*/*.zip
-do
-        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' | tr ' (),:-' '_' )"_$1"
-        echo archivo zip: "$file" y directorio: $dir
-        # Si existen ficheros de extensión .zip
-        if [ "$file" != "./*/*.zip" ] ; then
-        #       $(gzip $file ; tar -xvzf $file ; rm $file )
-                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
-        fi
-done
-
-# 2.2.- descomprima 2º nivel del contenido de los ZIP de TODOS los directorios creados
-for file in ./*/*/*.zip
-do
-        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' )"_$1"
-        echo archivo zip: "$file" y directorio: $dir
-        # Si existen ficheros de extensión .zip
-        if [ "$file" != "./*/*/*.zip" ] ; then
-        #       $(gzip $file ; tar -xvzf $file ; rm $file )
-                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
-        fi
-done
-
-
-# 2.3.- descomprima 3er nivel del contenido de los ZIP de TODOS los directorios creados
-#for file in $(find . -iname "*.zip")
-for file in ./*/*/*/*.zip
-do
-        dir=$( echo "$file" | awk -F.zip '{ print $1"" }')"_$1"
-        echo archivo zip: "$file" y directorio: $dir
-        # Si existen ficheros de extensión .zip
-        if [ "$file" != "./*/*/*/*.zip" ] ; then
-        #       $(gzip $file ; tar -xvzf $file ; rm $file )
-                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
-        fi
-done
-
-# 2.4.- descomprima 4º nivel del contenido de los ZIP de TODOS los directorios creados
-#for file in $(find . -iname "*.zip")
-for file in ./*/*/*/*/*.zip
-do
-        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' )"_$1"
-        echo archivo zip: "$file" y directorio: $dir
-        if [ "$file" != "./*/*/*/*/*.zip" ] ; then
-        #       $(gzip $file ; tar -xvzf $file ; rm $file )
-                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
-        fi
-done
-
-
+```
 # 3 REEMPLAZA EL FICHERO "ComputerSystemBase.c*" DE TODOS LOS PROYECTOS
 # CON EL ERROR LÉXICO EN LINEA 136 Carácter 25 donde "\%c" -> "\n%c" detectado
 # presente en el código desde la Versión V0 en "ComputerSystem.c" y desde la versión
@@ -112,7 +28,7 @@ do
                 salida=$( cp -f ./ComputerSystemBase.c* "$file")
         fi
 done
-'''
+```
 JPlag finds pairwise similarities among a set of multiple programs. It can reliably detect software plagiarism and collusion in software development, even when obfuscated. All similarities are calculated locally; no source code or plagiarism results are ever uploaded online. JPlag supports a large number of languages.
 
 * Script Exec Command
