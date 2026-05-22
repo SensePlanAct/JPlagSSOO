@@ -12,6 +12,60 @@
 [![Java Version](https://img.shields.io/badge/java-SE%2025-yellowgreen)](#download-and-installation)
 
 ```
+
+
+# 2 REVISA EL CONTEIDO DE LAS CARPETAS BUSCANDO .ZIP QUE DESCOMPRIMIR
+
+# 2.1.- descomprima 1er nivel del contenido de los ZIP de TODOS los directorios creados
+for file in ./*/*.zip
+do
+        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' | tr ' (),:-' '_' )"_$1"
+        echo archivo zip: "$file" y directorio: $dir
+        # Si existen ficheros de extensión .zip
+        if [ "$file" != "./*/*.zip" ] ; then
+        #       $(gzip $file ; tar -xvzf $file ; rm $file )
+                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
+        fi
+done
+
+# 2.2.- descomprima 2º nivel del contenido de los ZIP de TODOS los directorios creados
+for file in ./*/*/*.zip
+do
+        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' )"_$1"
+        echo archivo zip: "$file" y directorio: $dir
+        # Si existen ficheros de extensión .zip
+        if [ "$file" != "./*/*/*.zip" ] ; then
+        #       $(gzip $file ; tar -xvzf $file ; rm $file )
+                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
+        fi
+done
+
+# 2.3.- descomprima 3er nivel del contenido de los ZIP de TODOS los directorios creados
+#for file in $(find . -iname "*.zip")
+for file in ./*/*/*/*.zip
+do
+        dir=$( echo "$file" | awk -F.zip '{ print $1"" }')"_$1"
+        echo archivo zip: "$file" y directorio: $dir
+        # Si existen ficheros de extensión .zip
+        if [ "$file" != "./*/*/*/*.zip" ] ; then
+        #       $(gzip $file ; tar -xvzf $file ; rm $file )
+                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
+        fi
+done
+
+# 2.4.- descomprima 4º nivel del contenido de los ZIP de TODOS los directorios creados
+#for file in $(find . -iname "*.zip")
+for file in ./*/*/*/*/*.zip
+do
+        dir=$( echo "$file" | awk -F.zip '{ print $1"" }' )"_$1"
+        echo archivo zip: "$file" y directorio: $dir
+        if [ "$file" != "./*/*/*/*/*.zip" ] ; then
+        #       $(gzip $file ; tar -xvzf $file ; rm $file )
+                salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
+        fi
+done
+
+
 # 3 REEMPLAZA EL FICHERO "ComputerSystemBase.c*" DE TODOS LOS PROYECTOS
 # CON EL ERROR LÉXICO EN LINEA 136 Carácter 25 donde "\%c" -> "\n%c" detectado
 # presente en el código desde la Versión V0 en "ComputerSystem.c" y desde la versión
