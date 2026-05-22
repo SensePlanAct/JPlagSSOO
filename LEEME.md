@@ -10,7 +10,9 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jplag/JPlag)](https://github.com/jplag/JPlag/pulse)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=jplag_JPlag&metric=coverage)](https://sonarcloud.io/component_measures?metric=Coverage&view=list&id=jplag_JPlag)
 [![Java Version](https://img.shields.io/badge/java-SE%2025-yellowgreen)](#download-and-installation)
+
 # SCRIPT BASH WSL-LINUX
+
 ```
 # 1 EXTRAE DE LA CARPETA DE EJECUCION .ZIP QUE DESCOMPRIMIR EN LA CARPETA PARÁMETRO
 #       PARÁMETRO $1 el nombre del directorio donde extrae los .zip
@@ -114,10 +116,15 @@ done
 ```
 JPlag finds pairwise similarities among a set of multiple programs. It can reliably detect software plagiarism and collusion in software development, even when obfuscated. All similarities are calculated locally; no source code or plagiarism results are ever uploaded online. JPlag supports a large number of languages.
 
-* Script Exec Command
-   _./scriptJPlag.sh V1_
+* ** Script Exec Command ** (parameter $1 is the name of the directory where Tasks are exported)
+   ```
+   _./scriptJPlag.sh V1
+   _./scriptJPlag.sh V2
+   _./scriptJPlag.sh V4
+   ```
 
 * ** jPlag WIN EXEC COMMAND**:
+```
   _"java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar alumnCode
 V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScript > salidaV4AllEspEng.txt_
   * Salida
@@ -148,8 +155,14 @@ V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScr
 			Finding Clusters  <  <+>       > 0:00:04
 			Finding Clusters  <   <+>      > 0:00:04
 			Finding Clusters : complete_
+```
 *  ** jPlag WIN VIEW COMMAND**:
+    * Salida
+      <img width="1901" height="1077" alt="image" src="https://github.com/user-attachments/assets/8e6ee5d8-9957-4b0c-889b-36bfb64565a2" />
+
+```
   "java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar --port=2999 results_UTF-8.jplag
+```
 
 * 📖 [JPlag Wiki](https://github.com/jplag/JPlag/wiki)
 * 📈 [JPlag Demo](https://jplag.github.io/Demo/) 
