@@ -10,8 +10,37 @@
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/jplag/JPlag)](https://github.com/jplag/JPlag/pulse)
 [![SonarCloud Coverage](https://sonarcloud.io/api/project_badges/measure?project=jplag_JPlag&metric=coverage)](https://sonarcloud.io/component_measures?metric=Coverage&view=list&id=jplag_JPlag)
 [![Java Version](https://img.shields.io/badge/java-SE%2025-yellowgreen)](#download-and-installation)
-
+# SCRIPT BASH WSL-LINUX
 ```
+# 1 EXTRAE DE LA CARPETA DE EJECUCION .ZIP QUE DESCOMPRIMIR EN LA CARPETA PARÁMETRO
+#       PARÁMETRO $1 el nombre del directorio donde extrae los .zip
+
+# 1.-- Descomprima el contenido de ZIP del directorio de ejecución
+#for file in $(ls *.zip)
+#for file in $(find . -iname "*.zip")
+for file in *.zip
+do
+if [ -d "$file" ]
+ then
+        echo directorio: "$file"
+ else
+        if [ -f "$file" ]
+         then
+                echo archivo: "$file"
+
+                # DESCOMPRIME A CARPETA V4
+                dir=$(echo "$file" | awk -F/ '{ print $2"" }' | tr ' (),:-' '_' )"$1"
+                fichero=$( echo "$file" | sed 's/ /\\ /g' )
+                echo archivo zip: "$fichero" y directorio: $dir
+
+                # Si existen ficheros de extensión .zip
+                if [ "$file" != "*.zip" ] ; then
+                        #$(gzip $file ; tar -xvzf $file ; rm $file )
+                        salida=$( unzip -O DOS "$file" -d $dir ; rm "$file" )
+                fi
+       fi
+ fi
+done
 
 
 # 2 REVISA EL CONTEIDO DE LAS CARPETAS BUSCANDO .ZIP QUE DESCOMPRIMIR
