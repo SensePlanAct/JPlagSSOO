@@ -2,7 +2,8 @@
 	<img alt="JPlag logo" src="core/src/main/resources/de/jplag/logo-dark.png" width="350">
 </p>
 
-# JPlag - Scripting in bash Wsl andlinux for Detecting Source Code Plagiarism with .zip commpressed Moodle exporting Files
+# JPlag - Scripting in bash Wsl & linux
+## Detecting Source Code Plagiarism in .zip commpressed Moodle tasks exporting Files
 [![CI Build](https://github.com/jplag/jplag/actions/workflows/build-maven.yml/badge.svg)](https://github.com/jplag/jplag/actions/workflows/build-maven.yml)
 [![Latest Release](https://img.shields.io/github/release/jplag/jplag.svg)](https://github.com/jplag/jplag/releases/latest)
 [![Maven Central](https://img.shields.io/maven-metadata/v.svg?metadataUrl=https%3A%2F%2Frepo1.maven.org%2Fmaven2%2Fde%2Fjplag%2Fjplag%2Fmaven-metadata.xml&label=maven-central&color=00ff00)](https://central.sonatype.com/artifact/de.jplag/jplag)
