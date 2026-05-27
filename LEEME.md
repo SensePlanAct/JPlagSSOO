@@ -14,7 +14,7 @@
 
 # SCRIPT BASH WSL-LINUX
 
-```
+```JS
 # 1 EXTRAE DE LA CARPETA DE EJECUCION .ZIP QUE DESCOMPRIMIR EN LA CARPETA PARÁMETRO
 #       PARÁMETRO $1 el nombre del directorio donde extrae los .zip
 
@@ -117,14 +117,14 @@ done
 ```
 
 
-* ** Script Exec Command ** (parameter $1 is the name of the directory where Tasks are exported)
+* **Script Exec Command** (parameter $1 is the name of the directory where Tasks are exported)
    ```
    _./scriptJPlag.sh V1
    _./scriptJPlag.sh V2
    _./scriptJPlag.sh V4
    ```
 
-* ** jPlag WIN EXEC COMMAND**:
+* **jPlag WIN EXEC COMMAND**:
 ```
   _"java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar alumnCode
 V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScript > salidaV4AllEspEng.txt_
@@ -157,12 +157,12 @@ V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScr
 			Finding Clusters  <   <+>      > 0:00:04
 			Finding Clusters : complete_
 ```
-* jPlag WIN VIEW COMMAND**:
+* **jPlag WIN VIEW COMMAND**:
 ```
   "java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar --port=2999 results_UTF-8.jplag
 ```
 
-*  * Salida
+*  * HTML Output
       <img width="1901" height="1077" alt="image" src="https://github.com/user-attachments/assets/8e6ee5d8-9957-4b0c-889b-36bfb64565a2" />
 
 
