@@ -161,7 +161,8 @@ V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScr
   ```
   "java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar --port=2999 results_UTF-8.jplag
 ```
-    * Salida
+
+	* Salida
       <img width="1901" height="1077" alt="image" src="https://github.com/user-attachments/assets/8e6ee5d8-9957-4b0c-889b-36bfb64565a2" />
 
 
