@@ -14,7 +14,7 @@
 
 # SCRIPT BASH WSL-LINUX
 
-```JS
+```sh
 # 1 EXTRAE DE LA CARPETA DE EJECUCION .ZIP QUE DESCOMPRIMIR EN LA CARPETA PARÁMETRO
 #       PARÁMETRO $1 el nombre del directorio donde extrae los .zip
 
@@ -118,17 +118,19 @@ done
 
 
 * **Script Exec Command** (parameter $1 is the name of the directory where Tasks are exported)
-   ```
-   _./scriptJPlag.sh V1
-   _./scriptJPlag.sh V2
-   _./scriptJPlag.sh V4
+   ```sh
+   ./scriptJPlag.sh V1
+   ./scriptJPlag.sh V2
+   ./scriptJPlag.sh V4
    ```
 
 * **jPlag WIN EXEC COMMAND**:
+```j
+  "java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar alumnCode
+V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScript > salidaV4AllEspEng.txt
 ```
-  _"java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar alumnCode
-V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScript > salidaV4AllEspEng.txt_
-  * Salida
+* * Bash Output
+```j
     _Loading Submissions 100% [=======================] 177/177 (0:00:04 / 0:00:00)
     Parsing Submissions 100% [=======================] 177/177 (0:00:34 / 0:00:00)
     Preparing Submissions 100% [=====================] 173/173 (0:00:00 / 0:00:00)
@@ -158,7 +160,7 @@ V4AllEspEng -bc baseCodeV4All -l c --overwrite -r results_baseCodeV4AllEspEngScr
 			Finding Clusters : complete_
 ```
 * **jPlag WIN VIEW COMMAND**:
-```
+```j
   "java.exe" --enable-native-access=ALL-UNNAMED -jar jplag-6.3.0-jar-with-dependencies.jar --port=2999 results_UTF-8.jplag
 ```
 
